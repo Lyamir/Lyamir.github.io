@@ -46,7 +46,7 @@ div{
     background-color: var(--subBackground);
 }
 
-#header, #organizations, #contact{
+#header, #organizations, #contact, .educContainer{
     border-color: var(--mainBorder);
     background-color: var(--mainBackground);
 }
@@ -55,7 +55,22 @@ h2{
     text-align: center;
 }
 
-#header, #footer, #organizations, #contact{
+#header, #footer, #organizations, #contact, .educContainer{
     text-align: center;
     color: var(--mainText);
+}
+
+#educInfo{
+    display: flex;
+    justify-content: space-around;
+    border: none;
+    flex-wrap: wrap;
+}
+
+.educContainer{
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+    width: 300px;
 }
