@@ -41,12 +41,12 @@ div{
 
 }
 
-#contact, #education, #nav{
+ #projects, #education, #nav{
     border-color: var(--mainBorder);
     background-color: var(--subBackground);
 }
 
-#header, #experience{
+#header, #organizations, #contact{
     border-color: var(--mainBorder);
     background-color: var(--mainBackground);
 }
@@ -55,7 +55,7 @@ h2{
     text-align: center;
 }
 
-#header, #footer, #experience{
+#header, #footer, #organizations, #contact{
     text-align: center;
     color: var(--mainText);
 }
