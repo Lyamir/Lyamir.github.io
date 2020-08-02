@@ -1,0 +1,61 @@
+:root{
+    --mainText: #66FCF1;
+    --subText: gray;
+    --background: #A0D2EB;
+    --background2: #E5EAF5;
+    --mainColor: #D0BDF4;
+    --subColor: #8458B3;
+    --darkColor: #494D5F;
+    --mainBorder: #66FCF1;
+    --mainBackground: #1F2833;
+    --subBackground:#45A29E;
+    --bodyBackground: #0B0C10;
+
+}
+
+html, body, #wrapper{
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    background-color: var(--bodyBackground);
+    height: auto;
+}
+
+nav>ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--mainBackground);
+    font-weight: 700;
+}
+
+div{
+    padding: 10px;
+    margin: 10px 10px;
+    border: 2px;
+    border-style: solid;
+
+}
+
+#contact, #education, #nav{
+    border-color: var(--mainBorder);
+    background-color: var(--subBackground);
+}
+
+#header, #experience{
+    border-color: var(--mainBorder);
+    background-color: var(--mainBackground);
+}
+
+h2{
+    text-align: center;
+}
+
+#header, #footer, #experience{
+    text-align: center;
+    color: var(--mainText);
+}
