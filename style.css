@@ -41,7 +41,17 @@ div{
 
 }
 
- #projects, #education, #nav{
+h2{
+    text-align: center;
+}
+
+#header, #education, #organizations, #projects, #contact, #footer{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+ #projects, #education, #nav, .orgContainer{
     border-color: var(--mainBorder);
     background-color: var(--subBackground);
 }
@@ -51,15 +61,12 @@ div{
     background-color: var(--mainBackground);
 }
 
-h2{
-    text-align: center;
-}
+
 
 #header, #footer, #organizations, #contact, .educContainer{
     text-align: center;
     color: var(--mainText);
 }
-
 #educInfo{
     display: flex;
     justify-content: space-around;
@@ -67,10 +74,31 @@ h2{
     flex-wrap: wrap;
 }
 
+#orgInfo{
+    border: none;
+}
+
+.orgContainer{
+    
+}
+
+#orgTable{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--subBackground);
+}
+
+#orgTable, th, td{
+    border: 2px solid var(--mainBorder);
+}
+
+th, td{
+    padding: 10px;
+}
+
 .educContainer{
     display: flex;
     flex-direction: column;
-    
     text-align: center;
     width: 300px;
 }

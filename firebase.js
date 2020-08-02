@@ -49,6 +49,38 @@
                 div.appendChild(document.createTextNode(" - "));
                 div.appendChild(yearEnd); 
                 document.getElementById('educInfo').appendChild(div);
-            })
+            });
+        });
+
+        db.collection("organizations").get().then(function(snapshot){
+            snapshot.forEach(function(doc){
+                let div = document.createElement('div');
+                div.classList.add('orgContainer');
+                console.log(doc.data().name)
+                let name = document.createTextNode(doc.data().name);
+                let position = document.createTextNode(doc.data().position);
+                let yearStart = document.createTextNode(doc.data().yearStart);
+                let yearEnd = document.createTextNode(doc.data().yearEnd);
+
+                div.appendChild(name);
+                div.appendChild(position);
+                div.appendChild(yearStart);
+                div.appendChild(yearEnd);
+
+                document.getElementById('orgInfo').appendChild(div);
+            
+            });
+        });
+
+        db.collection("works").get().then(function(snapshot){
+            snapshot.forEach(function(doc){
+            
+            });
+        });
+
+        db.collection("others").get().then(function(snapshot){
+            snapshot.forEach(function(doc){
+                
+            });
         });
         
