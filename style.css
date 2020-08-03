@@ -10,6 +10,7 @@
     --mainBackground: #1F2833;
     --subBackground:#45A29E;
     --bodyBackground: #0B0C10;
+    --grayText: #C5C6C7;
 
 }
 
@@ -74,28 +75,56 @@ h2{
     flex-wrap: wrap;
 }
 
-#orgInfo{
+#contactInfo{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#socials{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#orgInfo, #projectInfo, #contactInfo, #contactContainer, #socials{
     border: none;
 }
 
-.orgContainer{
-    
+#orgTable, #projectTable{
+    width: 100%;
+    border-collapse: collapse;
 }
 
 #orgTable{
-    width: 100%;
-    border-collapse: collapse;
     background-color: var(--subBackground);
 }
 
+#projectTable{
+    background-color: var(--mainBackground);
+    color: var(--mainText);
+}
+
 #orgTable, th, td{
-    border: 2px solid var(--mainBorder);
+    border: 1px solid var(--mainBorder);
+}
+
+#AESTHETIC{
+    background-image: url(https://data.whicdn.com/images/296678722/original.jpg);
+    width: 500px;
+    height: 500px;
+    background-size: contain;
 }
 
 th, td{
     padding: 10px;
 }
 
+.link{
+    text-decoration: none;
+    color: var(--mainText);
+    font-weight: 600;
+}
 .educContainer{
     display: flex;
     flex-direction: column;

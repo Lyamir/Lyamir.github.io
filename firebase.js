@@ -15,12 +15,6 @@
 
         db.collection("education").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-        
-            })
-        });
-
-        db.collection("education").get().then(function(snapshot){
-            snapshot.forEach(function(doc){
                 let div = document.createElement('div');
                 div.classList.add('educContainer');
 
@@ -54,33 +48,77 @@
 
         db.collection("organizations").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let div = document.createElement('div');
-                div.classList.add('orgContainer');
-                console.log(doc.data().name)
+
+                let table = document.getElementById('orgTable');
+                
                 let name = document.createTextNode(doc.data().name);
                 let position = document.createTextNode(doc.data().position);
                 let yearStart = document.createTextNode(doc.data().yearStart);
                 let yearEnd = document.createTextNode(doc.data().yearEnd);
 
-                div.appendChild(name);
-                div.appendChild(position);
-                div.appendChild(yearStart);
-                div.appendChild(yearEnd);
+                let tr = document.createElement('tr');
+                table.appendChild(tr);
+                
+                let td = document.createElement('td');
+                td.appendChild(name);
+                table.appendChild(td);
 
-                document.getElementById('orgInfo').appendChild(div);
+                td = document.createElement('td');
+                td.appendChild(position);
+                table.appendChild(td);
+
+                td = document.createElement('td');
+                td.appendChild(yearStart);
+                table.appendChild(td);
+
+                td = document.createElement('td');
+                td.appendChild(yearEnd);
+                table.appendChild(td);
             
             });
         });
 
         db.collection("works").get().then(function(snapshot){
             snapshot.forEach(function(doc){
+
+                
+                let table = document.getElementById('projectTable');
+
+                let name = document.createTextNode(doc.data().name);
+                let year = document.createTextNode(doc.data().year);
+
+                
+                let a = document.createElement('a');
+                a.classList.add('link');
+                a.href = doc.data().link;
+                a.target = '_blank';
+                let link = document.createTextNode(doc.data().link);
+                
+
+                let tr = document.createElement('tr');
+                table.appendChild(tr);
+
+                let td = document.createElement('td');
+                td.appendChild(name);
+                table.appendChild(td);
+
+                td = document.createElement('td');
+                td.appendChild(year);
+                table.appendChild(td);
+
+                td = document.createElement('td');
+                td.appendChild(a);
+                a.appendChild(link);
+                table.appendChild(td);
             
             });
         });
 
-        db.collection("others").get().then(function(snapshot){
-            snapshot.forEach(function(doc){
-                
-            });
+        db.collection("others").doc("link").get().then(function(doc){
+
+            let github = document.createTextNode(doc.data().github);
+            let linkedin = document.createTextNode(doc.data().linkedin);
+            let twitter = document.createTextNode(doc.data().twitter);
+            
+
         });
-        
