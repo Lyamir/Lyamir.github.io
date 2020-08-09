@@ -116,9 +116,15 @@
 
         db.collection("others").doc("link").get().then(function(doc){
 
-            let github = document.createTextNode(doc.data().github);
-            let linkedin = document.createTextNode(doc.data().linkedin);
-            let twitter = document.createTextNode(doc.data().twitter);
+            document.getElementById('github').href = doc.data().github;
+            document.getElementById('linkedin').href = doc.data().linkedin;
+            document.getElementById('twitter').href = doc.data().twitter;
             
 
         });
+
+        db.collection("others").doc("intro").get().then(function(doc){
+            let intro = document.createTextNode(doc.data().value);
+            document.getElementById('intro').appendChild(intro);
+        });
+
