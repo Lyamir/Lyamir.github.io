@@ -46,6 +46,10 @@ h2{
     text-align: center;
 }
 
+th, td{
+    padding: 10px;
+}
+
 #header, #education, #organizations, #projects, #contact, #footer{
     width: 80%;
     margin: auto;
@@ -57,14 +61,14 @@ h2{
     background-color: var(--subBackground);
 }
 
-#header, #organizations, #contact, .educContainer{
+#header, #organizations, #contact, #loginContainer, .educContainer{
     border-color: var(--mainBorder);
     background-color: var(--mainBackground);
 }
 
 
 
-#header, #footer, #organizations, #contact, .educContainer{
+#header, #footer, #organizations, #contact, #loginContainer, .educContainer{
     text-align: center;
     color: var(--mainText);
 }
@@ -130,10 +134,6 @@ h2{
     background-size: contain;
 }
 
-.noBorder{
-    border: none;
-}
-
 #orgTable, #projectTable{
     width: 100%;
     border-collapse: collapse;
@@ -164,8 +164,35 @@ h2{
     text-decoration: underline;
 }
 
-th, td{
+#loginContainer{
+    margin: 15% auto;
+    width: 30%;
     padding: 10px;
+    height: 270px;
+}
+
+
+input {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+input[type="email"]:focus{
+    background-color: var(--mainBorder);
+}
+
+input[type="password"]:focus{
+    background-color: var(--mainBorder);
+}
+#loginButton{
+    margin-top: 30px;
+    width: 15%;
+    float: right;
+}
+
+.noBorder{
+    border: none;
 }
 
 .link{
