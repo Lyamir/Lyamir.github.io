@@ -5,7 +5,6 @@ function authentication() {
 
     
     firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
-        location.href="/edit.html"
 }).catch(function(err){
     if(err.code == "auth/wrong-password"){
         alert("wrong password");
@@ -21,8 +20,8 @@ function authentication() {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         console.log("USER")
+        location.href="/edit.html"
     } else {
         console.log("NO USER")
-      location.href="/index.html";
     }
   });
