@@ -171,6 +171,16 @@ th, td{
     height: 270px;
 }
 
+#educform{
+    display: flex;
+    margin: auto;
+    height: 500px;
+}
+
+#deleteEduc{
+    width: 50%;
+}
+
 
 input {
     margin-top: 20px;
@@ -184,6 +194,13 @@ input[type="email"]:focus{
 
 input[type="password"]:focus{
     background-color: var(--mainBorder);
+}
+
+#addEducButton{
+    margin-top: 20px;
+    float: right;
+    width: 200px;
+    height: 50px;
 }
 
 #loginButton{
@@ -208,3 +225,6 @@ input[type="password"]:focus{
     text-align: center;
     width: 300px;
 }
+
+
+
