@@ -50,6 +50,9 @@
                 </div>
                 <div id="deleteEduc">
                     <h2>DELETE EDUCATION</h2>
+                    <select id="selectEducation">
+                    </select><br>
+                    <button id="deleteEducButton" onclick="deleteEducation()">DELETE</button>
                 </div>
             </div>
         </div>
@@ -77,6 +80,9 @@
                 </div>
                 <div id="deleteOrg">
                     <h2>DELETE ORGANIZATION</h2>
+                    <select id="selectOrganization">
+                    </select><br>
+                    <button id="deleteOrgButton" onclick="deleteOrganization()">DELETE</button>
                 </div>
             </div>
         </div>
@@ -97,11 +103,14 @@
                     <H2>ADD PROJECT</H2>
                     <input id="projectInput" placeholder="Project Name">
                     <input id="yearDoneInput" placeholder="Year Done">
-                    <input id="LinkInput" placeholder="Link">
+                    <input id="linkInput" placeholder="Link">
                     <button id="addProjectButton" onclick="addProject()">ADD</button>
                 </div>
                 <div id="deleteProject">
                     <h2>DELETE PROJECT</h2>
+                    <select id="selectProject">
+                    </select><br>
+                    <button id="deleteProjectButton" onclick="deleteProject()">DELETE</button>
                 </div>
             </div>
         </div>
@@ -112,7 +121,7 @@
                 <div id="contactContainer" class="noBorder">
                     <h3>Have any questions?<br><br>
                     You may send me an email me 
-                    at <a href="mailto: carlos_doble@dlsu.edu.ph">
+                    at <a id="email" href="mailto: carlos_doble@dlsu.edu.ph">
                     carlos_doble@dlsu.edu.ph</a><br><br><br></h3>
                     <h2></h2><br>
                     <div id ="socials">
@@ -120,7 +129,13 @@
                         <a id="linkedin" target="_blank"><div id="icon_linkedin"></div></a>
                         <a id="twitter" target="_blank"><div id="icon_twitter"></div></a>
                     </div>
-
+                    <div id="updateSocials">
+                        <h2>UPDATE LINKS</h2>
+                        <input id="githubInput">
+                        <input id="linkedinInput">
+                        <input id="twitterInput">
+                        <button id="updateSocialsButton" onclick="updateSocials()">UPDATE</button>
+                    </div>
                 </div>
                 <div id = "AESTHETIC"></div>
             </div>

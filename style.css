@@ -180,7 +180,12 @@ th, td{
 #orgForm{
     display: flex;
     margin: auto;
-    height: 400px;
+    height: 450px;
+}
+
+#updateSocials{
+    margin: auto;
+    height: 350px;
 }
 
 #projectForm{
@@ -211,10 +216,17 @@ input[type="password"]:focus{
     background-color: var(--mainBorder);
 }
 
-#addEducButton, #addOrgButton, #addProjectButton{
+#addEducButton, #addOrgButton, #addProjectButton, #deleteEducButton, #deleteOrgButton,  #deleteProjectButton, #updateSocialsButton{
     margin-top: 20px;
     float: right;
     width: 200px;
+    height: 50px;
+}
+
+#selectEducation, #selectOrganization, #selectProject{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
     height: 50px;
 }
 

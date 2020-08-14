@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        console.log(user);
+        console.log("USER LOGGED IN")
     } else {
         console.log("NO USER")
       location.href="/index.html"
@@ -9,6 +9,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   var db = firebase.firestore();
 
+
+//loads data from the database to the website
 db.collection("education").get().then(function(snapshot){
     snapshot.forEach(function(doc){
         let div = document.createElement('div');
@@ -120,6 +122,9 @@ db.collection("others").doc("link").get().then(function(doc){
     document.getElementById('linkedin').href = doc.data().linkedin;
     document.getElementById('twitter').href = doc.data().twitter;
     
+    document.getElementById('githubInput').value = doc.data().github;
+    document.getElementById('linkedinInput').value = doc.data().linkedin;
+    document.getElementById('twitterInput').value = doc.data().twitter;
 
 });
 
@@ -129,6 +134,35 @@ db.collection("others").doc("intro").get().then(function(doc){
     document.getElementById('intro').appendChild(h3);
     h3.appendChild(intro);
 });
+
+
+//lists in select forms
+db.collection("education").get().then(function(snapshot){
+  snapshot.forEach(function(doc){
+    let option = document.createElement('option')
+    option.setAttribute("data-id", doc.id)
+    option.append(doc.data().school + " | " + doc.data().degree + " | " + doc.data().yearStart + " | " + doc.data().yearEnd)
+    document.getElementById("selectEducation").append(option);
+  })
+})
+
+db.collection("organizations").get().then(function(snapshot){
+  snapshot.forEach(function(doc){
+    let option = document.createElement('option')
+    option.setAttribute("data-id", doc.id)
+    option.append(doc.data().name + " | " + doc.data().position + " | " + doc.data().yearStart + " | " + doc.data().yearEnd)
+    document.getElementById("selectOrganization").append(option);
+  })
+})
+
+db.collection("works").get().then(function(snapshot){
+  snapshot.forEach(function(doc){
+    let option = document.createElement('option')
+    option.setAttribute("data-id", doc.id)
+    option.append(doc.data().name + " | " + doc.data().year + " | " + doc.data().link)
+    document.getElementById("selectProject").append(option);
+  })
+})
 
 
 
@@ -153,6 +187,21 @@ function addEducation() {
   });
 }
 
+function deleteEducation(){
+  let list = document.getElementById("selectEducation")
+  
+  db.collection("education").get().then(function(snapshot){
+    snapshot.forEach(function(doc){
+      let selected = list.options[list.selectedIndex].getAttribute("data-id");
+      if (selected == doc.id)
+        db.collection("education").doc(doc.id).delete().then(function(){
+          console.log("DELETE SUCCESSFUL")
+        })
+    })
+  })
+}
+
+
 function addOrganization() {
   let org = document.getElementById("orgInput").value;
   let position = document.getElementById("positionInput").value;
@@ -172,6 +221,21 @@ function addOrganization() {
   });
 }
 
+function deleteOrganization(){
+  let list = document.getElementById("selectOrganization")
+  
+  db.collection("organizations").get().then(function(snapshot){
+    snapshot.forEach(function(doc){
+      let selected = list.options[list.selectedIndex].getAttribute("data-id");
+      if (selected == doc.id)
+        db.collection("organizations").doc(doc.id).delete().then(function(){
+          console.log("DELETE SUCCESSFUL")
+        })
+    })
+  })
+}
+
+
 function addProject() {
   let project = document.getElementById("projectInput").value;
   let yearDone = document.getElementById("yearDoneInput").value;
@@ -188,3 +252,29 @@ function addProject() {
     console.error("Error adding document: ", error);
   });
 }
+
+function deleteProject(){
+  let list = document.getElementById("selectProject")
+  
+  db.collection("works").get().then(function(snapshot){
+    snapshot.forEach(function(doc){
+      let selected = list.options[list.selectedIndex].getAttribute("data-id");
+      if (selected == doc.id)
+        db.collection("works").doc(doc.id).delete().then(function(){
+          console.log("DELETE SUCCESSFUL")
+        })
+    })
+  })
+}
+
+function updateSocials(){
+  db.collection("others").doc("link").update({
+    github: document.getElementById("githubInput").value,
+    linkedin: document.getElementById("linkedinInput").value,
+    twitter: document.getElementById("twitterInput").value
+  }).then(function(){
+  console.log("UPDATE SUCCESSFUL")
+}).catch(function(err){
+  console.error("Error updating document: ", err);
+})}
+
