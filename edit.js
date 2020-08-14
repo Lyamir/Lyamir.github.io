@@ -164,6 +164,9 @@ db.collection("works").get().then(function(snapshot){
   })
 })
 
+db.collection("others").doc("intro").get().then(function(doc){
+  document.getElementById("infoInput").value = doc.data().value
+});
 
 
 function addEducation() {
@@ -267,6 +270,14 @@ function deleteProject(){
   })
 }
 
+
+function updateInfo(){
+  db.collection("others").doc("intro").update({
+    value: document.getElementById("infoInput").value
+  }).then(function(){
+    console.log("UPDATE SUCCESSFUL")
+  })
+}
 function updateSocials(){
   db.collection("others").doc("link").update({
     github: document.getElementById("githubInput").value,

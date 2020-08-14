@@ -188,6 +188,10 @@ th, td{
     height: 350px;
 }
 
+#updateInfo{
+    height: 200px
+}
+
 #projectForm{
     display: flex;
     margin: auto;
@@ -216,7 +220,7 @@ input[type="password"]:focus{
     background-color: var(--mainBorder);
 }
 
-#addEducButton, #addOrgButton, #addProjectButton, #deleteEducButton, #deleteOrgButton,  #deleteProjectButton, #updateSocialsButton{
+#addEducButton, #addOrgButton, #addProjectButton, #deleteEducButton, #deleteOrgButton,  #deleteProjectButton, #updateSocialsButton, #updateInfoButton{
     margin-top: 20px;
     float: right;
     width: 200px;
