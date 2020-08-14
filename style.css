@@ -171,16 +171,31 @@ th, td{
     height: 270px;
 }
 
-#educform{
+#educForm{
     display: flex;
     margin: auto;
     height: 500px;
 }
 
-#deleteEduc{
+#orgForm{
+    display: flex;
+    margin: auto;
+    height: 400px;
+}
+
+#projectForm{
+    display: flex;
+    margin: auto;
+    height: 400px;
+}
+
+#addEduc, #addOrg, #addProject{
     width: 50%;
 }
 
+#deleteEduc, #deleteOrg, #deleteProject{
+    width: 50%;
+}
 
 input {
     margin-top: 20px;
@@ -196,7 +211,7 @@ input[type="password"]:focus{
     background-color: var(--mainBorder);
 }
 
-#addEducButton{
+#addEducButton, #addOrgButton, #addProjectButton{
     margin-top: 20px;
     float: right;
     width: 200px;

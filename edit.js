@@ -140,7 +140,47 @@ function addEducation() {
   let image = document.getElementById("imageInput").value;
 
   db.collection("education").add({
-    
+    school: school,
+    degree: degree,
+    yearStart: yearStart,
+    yearEnd: yearEnd,
+    image: image
+  }).then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+    console.error("Error adding document: ", error);
+  });
+}
+
+function addOrganization() {
+  let org = document.getElementById("orgInput").value;
+  let position = document.getElementById("positionInput").value;
+  let yearStart = document.getElementById("yearStartOrg").value;
+  let yearEnd = document.getElementById("yearEndOrg").value;
+
+  db.collection("organizations").add({
+    name: org,
+    position: position,
+    yearStart: yearStart,
+    yearEnd: yearEnd
+  }).then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+    console.error("Error adding document: ", error);
+  });
+}
+
+function addProject() {
+  let project = document.getElementById("projectInput").value;
+  let yearDone = document.getElementById("yearDoneInput").value;
+  let link = document.getElementById("linkInput").value;
+
+  db.collection("works").add({
+    name: project,
+    year: yearDone,
+    link: link
   }).then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
   })

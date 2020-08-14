@@ -41,12 +41,15 @@
             <div id="educForm">
                 <div id="addEduc">
                     <H2>ADD EDUCATION</H2>
-                    <input id="schoolInput" placeholder="name">
-                    <input id="degreeInput" placeholder="degree">
-                    <input id="yearStartEduc" placeholder="year start">
-                    <input id="yearEndEduc" placeholder="year end">
-                    <input id="imageInput" placeholder="image url"><br>
+                    <input id="schoolInput" placeholder="School Name">
+                    <input id="degreeInput" placeholder="Degree Obtained">
+                    <input id="yearStartEduc" placeholder="Year Started">
+                    <input id="yearEndEduc" placeholder="Year Ended">
+                    <input id="imageInput" placeholder="Image URL"><br>
                     <button id="addEducButton" onclick="addEducation()">ADD</button>
+                </div>
+                <div id="deleteEduc">
+                    <h2>DELETE EDUCATION</h2>
                 </div>
             </div>
         </div>
@@ -63,6 +66,19 @@
                     </tr>
                 </table>
             </div>
+            <div id="orgForm">
+                <div id="addOrg">
+                    <H2>ADD ORGANIZATION</H2>
+                    <input id="orgInput" placeholder="Organization Name">
+                    <input id="positionInput" placeholder="Position">
+                    <input id="yearStartOrg" placeholder="Year Started">
+                    <input id="yearEndOrg" placeholder="Year Ended">
+                    <button id="addOrgButton" onclick="addOrganization()">ADD</button>
+                </div>
+                <div id="deleteOrg">
+                    <h2>DELETE ORGANIZATION</h2>
+                </div>
+            </div>
         </div>
 
         <div id="projects">
@@ -75,6 +91,18 @@
                         <th>Link</th>
                     </tr>
                 </table>
+            </div>
+            <div id="projectForm">
+                <div id="addProject">
+                    <H2>ADD PROJECT</H2>
+                    <input id="projectInput" placeholder="Project Name">
+                    <input id="yearDoneInput" placeholder="Year Done">
+                    <input id="LinkInput" placeholder="Link">
+                    <button id="addProjectButton" onclick="addProject()">ADD</button>
+                </div>
+                <div id="deleteProject">
+                    <h2>DELETE PROJECT</h2>
+                </div>
             </div>
         </div>
 
