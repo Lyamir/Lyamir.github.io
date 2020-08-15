@@ -20,6 +20,7 @@ html, body, #wrapper{
     font-family: Arial;
     background-color: var(--bodyBackground);
     height: auto;
+    scroll-behavior: smooth;
 }
 
 nav>ul{
