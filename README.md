@@ -1,2 +1,1 @@
-"# ccapdev-machineproject1" 
-"# ccapdev-machineproject1" 
+CCAPDEV Project using plain HTML, CSS, and JavaScipt connected to Firebase Firestore
